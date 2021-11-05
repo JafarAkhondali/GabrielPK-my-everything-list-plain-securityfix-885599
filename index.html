@@ -7,6 +7,31 @@
     <body>
         <div id="input_window">
             <h1>Add an Entry</h1>
+            <form action="">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title"><br><br>
+
+                <label for="link">Link:</label>
+                <input type="url" id="link" name="link"><br><br>
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date"><br><br>
+
+                <label for="finish-date">Finish Date:</label>
+                <input type="date" id="finish-date" name="finish-date"><br><br>
+
+                <label for="fiction?">Fiction or Nonfiction:</label>
+                <select name="fiction?" id="ficiton?">
+                    <option value="fiction">Fiction</option>
+                    <option value="nonficiton">Nonfiction</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+
+                <label for="notes">Notes:</label><br>
+                <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </body>
 </html>

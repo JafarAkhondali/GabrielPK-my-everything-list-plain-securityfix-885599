@@ -3,19 +3,19 @@ const form = document.getElementById("input-form");
 function createCookie(name, value)
 {
     var today = new Date();
-    var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+    var expiry = new Date(today.getTime() + 365 * 24 * 3600 * 1000); // plus 365 days
     document.cookie = name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
 }
 
-form.addEventListener('submit', (event) => {
+// right now updating the list is O(n) though there's probably a better way to do it
+// TODO: optimize updating list to sub O(n) time
+form.addEventListener("submit", (event) => {
     event.preventDefault();
     var elements = form.elements;
     var formMap = {"ts": Date.now()};
     for(var i=0, element; element = elements[i++];) {
         if (element.name != "") {
-            // createCookie(element.name, element.value);
             formMap[element.name] = element.value;
-            // console.log(element.name + ": " + element.value);
         }
     }
 

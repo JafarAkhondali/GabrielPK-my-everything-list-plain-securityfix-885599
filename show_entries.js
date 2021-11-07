@@ -1,10 +1,12 @@
 function showEntries() {
     var cur_entries = getCookieElement("entries");
     showWindow(cur_entries);
-    //console.log(cur_entries);
-    //alert("Showing entries...\n" + cur_entries);
 };
 
+// showing is always going to be O(n)
+// but showing the most recent will iterate over the whole list
+// but we also delete all the elements and recreate the list when we hide then re-show entries
+// TODO: optimize hiding and showing the list
 function showWindow(entries) {
     var showWindow = document.getElementById("show_window");
     if (showWindow.style.display === "none") {

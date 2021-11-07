@@ -3,6 +3,7 @@
     <head>
         <title>A Personal CMS</title>
         <link rel="stylesheet" href="style.css"/>
+        <script type="text/javascript" src="show_entries.js"></script>
     </head>
     <body>
         <div id="input_window">
@@ -20,22 +21,22 @@
                 <label for="finish-date">Finish Date:</label>
                 <input type="date" id="finish-date" name="finish-date"><br><br>
 
-                <label for="fiction?">Fiction or Nonfiction:</label>
-                <select name="fiction?" id="ficiton?">
+                <label for="fiction">Fiction or Nonfiction:</label>
+                <select name="fiction" id="fiction">
                     <option value="fiction">Fiction</option>
-                    <option value="nonficiton">Nonfiction</option>
+                    <option value="nonfiction">Nonfiction</option>
                     <option value="other">Other</option>
                 </select><br><br>
 
                 <label for="notes">Notes:</label><br>
                 <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
 
-                <button type="submit" value="Submit">Submit</button>
+                <button type="submit" value="Submit">Submit</button><br><br>
             </form>
+            <script src="submit_form.js"></script>
         </div>
-        <script src="submit_form.js"></script>
-        <div id="show_window">
-
+        <button type="button" onclick="showEntries()">Show Entries</button><br><br>
+        <div id="show_window" style="display: none;">
         </div>
     </body>
 </html>

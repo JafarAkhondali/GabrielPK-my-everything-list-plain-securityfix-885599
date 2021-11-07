@@ -26,7 +26,7 @@ form.addEventListener("submit", (event) => {
             .find(row => row.startsWith("entries="))
             .split("=")[1];
         cur_entries = JSON.parse(cur_entries);
-        createCookie("entries", JSON.stringify(cur_entries.concat([formMap])));
+        createCookie("entries", JSON.stringify(cur_entries.push([formMap])));
     }
     else {
         createCookie("entries", JSON.stringify([formMap]));
